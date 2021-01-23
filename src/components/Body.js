@@ -36,6 +36,17 @@ const Body = (props) => {
       });
   };
 
+  const onEditQuan = (id, isOff) => {
+    ApiCaller.put('game/' + id, { isOff: !isOff })
+      .then((res) => {
+        message.info('Thành công');
+        getData();
+      })
+      .catch((error) => {
+        message.error('Có lỗi xảy ra');
+      });
+  };
+
   if (error) {
     return <h1>Xem lại kết nối internet và báo lỗi với Admin</h1>;
   }
@@ -43,7 +54,7 @@ const Body = (props) => {
   return (
     <Row gutter={16}>
       <Col span={24}>
-        <Table list={list} onEdit={onEdit} />
+        <Table list={list} onEdit={onEdit} onEditQuan={onEditQuan} />
       </Col>
     </Row>
   );
