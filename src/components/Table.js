@@ -12,28 +12,28 @@ const Item = (props) => {
       render: (code) => <Tag>{code}</Tag>,
     },
     {
-      title: 'Cái',
+      title: 'Quân',
       key: 'action1',
       render: ({ _id, isOnline, isOff }) => {
         return isOnline ? (
           <Button onClick={() => onEdit(_id, isOnline, isOff)} type='primary'>
-            Cái bật
+            Quân bật
           </Button>
         ) : (
-          <Button onClick={() => onEdit(_id, isOnline, isOff)}>Cái tắt</Button>
+          <Button onClick={() => onEdit(_id, isOnline, isOff)}>Quân tắt</Button>
         );
       },
     },
     {
-      title: 'Quân',
+      title: 'Cái',
       key: 'action2',
       render: ({ _id, isOff, isOnline }) => {
         return isOff ? (
           <Button onClick={() => onEditQuan(_id, isOnline, isOff)} type='primary'>
-            Quân bật
+            Cái bật
           </Button>
         ) : (
-          <Button onClick={() => onEditQuan(_id, isOnline, isOff)}>Quân tắt</Button>
+          <Button onClick={() => onEditQuan(_id, isOnline, isOff)}>Cái tắt</Button>
         );
       },
     },
