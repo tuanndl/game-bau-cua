@@ -14,26 +14,26 @@ const Item = (props) => {
     {
       title: 'Cái',
       key: 'action1',
-      render: ({ _id, isOnline }) => {
+      render: ({ _id, isOnline, isOff }) => {
         return isOnline ? (
-          <Button onClick={() => onEdit(_id, isOnline)} type='primary'>
+          <Button onClick={() => onEdit(_id, isOnline, isOff)} type='primary'>
             Cái bật
           </Button>
         ) : (
-          <Button onClick={() => onEdit(_id, isOnline)}>Cái tắt</Button>
+          <Button onClick={() => onEdit(_id, isOnline, isOff)}>Cái tắt</Button>
         );
       },
     },
     {
       title: 'Quân',
       key: 'action2',
-      render: ({ _id, isOff }) => {
+      render: ({ _id, isOff, isOnline }) => {
         return isOff ? (
-          <Button onClick={() => onEditQuan(_id, isOff)} type='primary'>
+          <Button onClick={() => onEditQuan(_id, isOnline, isOff)} type='primary'>
             Quân bật
           </Button>
         ) : (
-          <Button onClick={() => onEditQuan(_id, isOff)}>Quân tắt</Button>
+          <Button onClick={() => onEditQuan(_id, isOnline, isOff)}>Quân tắt</Button>
         );
       },
     },

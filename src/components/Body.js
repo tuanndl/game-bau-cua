@@ -25,8 +25,8 @@ const Body = (props) => {
     getData();
   }, []);
 
-  const onEdit = (id, isOnline) => {
-    ApiCaller.put('game/' + id, { isOnline: !isOnline })
+  const onEdit = (id, isOnline, isOff) => {
+    ApiCaller.put('game/' + id, { isOnline: !isOnline, isOff })
       .then((res) => {
         message.info('Thành công');
         getData();
@@ -36,8 +36,8 @@ const Body = (props) => {
       });
   };
 
-  const onEditQuan = (id, isOff) => {
-    ApiCaller.put('game/' + id, { isOff: !isOff })
+  const onEditQuan = (id, isOnline, isOff) => {
+    ApiCaller.put('game/' + id, { isOnline, isOff: !isOff })
       .then((res) => {
         message.info('Thành công');
         getData();
